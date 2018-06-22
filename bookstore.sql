@@ -140,7 +140,7 @@ MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
-
+ALTER TABLE `user` CHANGE `nama` `username` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 --
 -- Ketidakleluasaan untuk tabel `buku`
 --
