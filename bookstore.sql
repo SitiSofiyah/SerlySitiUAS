@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22 Jun 2018 pada 06.03
+-- Generation Time: 22 Jun 2018 pada 06.22
 -- Versi Server: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -79,7 +79,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `level` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama`, `password`, `email`, `alamat`, `level`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@gmail.com', 'Malang', 'admin'),
+(2, 'siti', 'db04eb4b07e0aaf8d1d477ae342bdff9', 'sitsof@gmail.com', 'Malang', 'user'),
+(3, 'serly', '3385b064e97439e0b0bd285f3645c31e', 'serly@gmail.com', 'Malang', 'user');
 
 --
 -- Indexes for dumped tables
@@ -127,7 +136,7 @@ MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
