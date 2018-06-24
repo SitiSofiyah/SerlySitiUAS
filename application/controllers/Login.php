@@ -55,6 +55,36 @@ class Login extends CI_Controller {
 			echo"login berhasil";
 		}
 	}
+	
+	public function daftar()
+	{
+		$this->load->view('daftar');
+	}
+
+	public function insert()
+	{
+		$this->form_validation->set_rules('username','username','trim|required');
+		$this->form_validation->set_rules('password','password','trim|required');
+		$this->form_validation->set_rules('alamat','alamat','trim|required');
+		$this->form_validation->set_rules('email','email','trim|required');
+		
+
+		if($this->form_validation->run()==FALSE){
+			$this->load->view('daftar');
+		}else{
+			$this->load->model('User');
+			$this->User->daftar();
+			$this->load->view('loginView');
+			
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('logged_in');
+		$this->session->sess_destroy();
+		redirect('login','refresh');
+	}
 }
 
 
