@@ -39,7 +39,7 @@
           
           <button type="submit"  class="btn btn-lg btn-primary btn-block">Sign in</button>
           <div>
-           Create account
+           <a href="<?php echo base_url('index.php/Login/daftar') ?>">Create account</a>
           </div>
           
         </form>
