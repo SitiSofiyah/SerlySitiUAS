@@ -9,7 +9,7 @@
 		<!-- Bootstrap CSS -->
 			<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
 			<link rel="stylesheet" href="<?php echo base_url()?>assets/js/style.js">
-			<link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
+			<link rel="stylesheet" href="<?php echo base_url()?>assets/css/stylee.css">
 			
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
