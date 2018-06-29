@@ -23,6 +23,13 @@ class Buku_model extends CI_Model {
 
 		$this->db->insert('buku', $object);
 	}
+
+	public function getBuku_update()
+	{
+		$query = $this->db->query("Select * from buku LIMIT 5");
+		return $query->result_array();
+	}
+
 	public function getBuku_list()
 	{
 		$query = $this->db->query("Select buku.*, kategori.* from buku,kategori where buku.id_kategori = kategori.id_kategori");

@@ -10,12 +10,7 @@ class Buku extends CI_Controller {
 		$this->load->view('buku_list', $object);
 	}
 
-	public function datatable()
-	{
-		$this->load->model('buku_model');
-		$data["buku_list"] = $this->buku_model->getBuku_list();
-		$this->load->view('buku_datatable',$data);
-	}
+	
 	public function create()
 	{
 		$this->load->model('buku_model');
@@ -49,7 +44,7 @@ class Buku extends CI_Controller {
 			}
 			else
 			{
-			$this->pegawai_model->insertBuku();
+			$this->buku_model->insertBuku();
 			$this->load->view('tambah_buku_sukses');
 			}
 		}

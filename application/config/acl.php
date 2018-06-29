@@ -60,6 +60,18 @@ $acl = array(
 	'login/index' => array(
 		'public'
 	),
+	'buku' => array(
+		'user' => false,
+ 		'admin' => true,
+	),
+	'kategori' => array(
+		'user' => false,
+ 		'admin' => true,
+	),
+	'user' => array(
+		'user' => true,
+ 		'admin' => false,
+	),
 );
 
 /* -----------------------------

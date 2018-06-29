@@ -52,7 +52,14 @@ class Login extends CI_Controller {
 		if($this->form_validation->run()==false){
 			$this->load->view('loginView');
 		}else{
-			echo"login berhasil";
+			if($this->session->userdata('logged_in')){
+			$session_data=$this->session->userdata("logged_in");
+			if($session_data['level']=='admin'){
+				redirect('buku','refresh');
+			}else{
+				redirect('user','refresh');
+			}
+		}
 		}
 	}
 	
