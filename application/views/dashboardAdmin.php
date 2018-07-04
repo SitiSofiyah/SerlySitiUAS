@@ -33,6 +33,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
           </li>
+          <li class='launcher dropdown hover'>
+            <i class='icon-flag'></i>
+            <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
+          </li>
           <!-- <li class='launcher'>
             <i class='icon-table'></i>
             <a href="tables.html">Tables</a>
