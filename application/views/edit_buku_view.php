@@ -1,23 +1,79 @@
 <!DOCTYPE html>
-<html lang="">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>Data Buku</title>
+    <meta content='lab2023' name='author'>
+    <meta content='' name='description'>
+    <meta content='' name='keywords'>
+    <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
+     <link href="<?php echo base_url()?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body class='main page'>
+    <!-- Navbar -->
+    
+      
+    
+      <!-- Sidebar -->
+      <section id='sidebar'>
+        <i class='icon-align-justify icon-large' id='toggle'></i>
+        <ul id='dock'>
+          <li class='launcher'>
+            <i class='icon-dashboard'></i>
+            <a href="<?php echo base_url('index.php/buku')?>">Dashboard</a>
+          </li>
+          <li class='active launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/buku/bukuView')?>">Buku</a>
+          </li>
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/kategori/tampilKategori')?>">Kategori</a>
+          </li>
+           </ul>
+        <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+      </section>
+      <!-- Tools -->
+      <section id='tools'>
+        <ul class='breadcrumb' id='breadcrumb'>
+          <li class='title'>Pengelolaan Data Buku</li>
+          <!-- <li><a href="#">Lorem</a></li>
+          <li class='active'><a href="#">ipsum</a></li> -->
+        </ul>
+       
+          <div class='label label-danger'>
+            Danger
+          </div>
+          <div class='label label-info'>
+            Info
+          </div>
+        </div>
+      </section>
+      <!-- Content -->
+      <div id='content'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            <i class='icon-beer icon-large'></i>
+          DashBoard
+          </div>
+          <div class='panel-body'>
+            <div class='page-header'>
+              <div class='panel-heading'>
+            <i class='icon-table icon-large'></i>
+            Dashboard Admin
+          </div>
+          <div class='panel-body'>
+            <table class="table table-striped">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
+              <div class="container">
+      <div class="panel-heading">
+        <div class="table-striped">
+           <!-- <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div> -->
 	<body>
-		<h1 class="text-center">Hello World</h1>
+		<h1 class="text-center">Update Data Buku</h1>
 
 		<div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
 			<?php echo form_open('buku/update/'.$this->uri->segment(3)); ?>
