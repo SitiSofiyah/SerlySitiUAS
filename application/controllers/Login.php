@@ -25,9 +25,9 @@ class Login extends CI_Controller {
 
 	public function cekDB($password)
 	{
-		$this->load->model('user');
+		$this->load->model('user_model');
 		$username=$this->input->post('username');
-		$result=$this->user->login($username,$password);
+		$result=$this->user_model->login($username,$password);
 		if($result){
 			$sess_array = array();
 			foreach ($result as $rows ) {
@@ -79,7 +79,7 @@ class Login extends CI_Controller {
 		if($this->form_validation->run()==FALSE){
 			$this->load->view('daftar');
 		}else{
-			$this->load->model('User');
+			$this->load->model('user_model');
 			$this->User->daftar();
 			$this->load->view('loginView');
 			

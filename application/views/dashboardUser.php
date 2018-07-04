@@ -30,7 +30,11 @@
           </li>
           <li class='launcher'>
             <i class='icon-table'></i>
-            <a href="tables.html">Kategori</a>
+            <a href="#">Kategori</a>
+          </li>
+          <li class='launcher'>
+            <i class='icon-table'></i>
+            <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
           </li>
           <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>

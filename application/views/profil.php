@@ -3,40 +3,40 @@
   <head>
     <meta charset='utf-8'>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-    <title>Online BookStore</title>
+    <title>Dashboard</title>
     <meta content='lab2023' name='author'>
     <meta content='' name='description'>
     <meta content='' name='keywords'>
-  <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
      <link href="<?php echo base_url()?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
     
   </head>
   <body class='main page'>
     <!-- Navbar -->
     
+     
       <!-- Sidebar -->
       <section id='sidebar'>
         <i class='icon-align-justify icon-large' id='toggle'></i>
         <ul id='dock'>
-          <li class='launcher'>
-            <i class='icon-dashboard'></i>
-             <a href="<?php echo base_url('index.php/user')?>">Dashboard</a>
-          </li>
           <li class='active launcher'>
+            <i class='icon-dashboard'></i>
+            <a href="<?php echo base_url('index.php/user')?>">Dashboard</a>
+          </li>
+          <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-           <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
+            <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
           <li class='launcher'>
             <i class='icon-table'></i>
             <a href="#">Kategori</a>
           </li>
-          <li class='launcher'>
+            <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
           </li>
-           <li class='launcher dropdown hover'>
+          <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
             <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
             <!-- <ul class='dropdown-menu'>
@@ -70,41 +70,35 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Tables</li>
-          <li><a href="#">Lorem</a></li>
-          <li class='active'><a href="#">ipsum</a></li>
+          <li class='title'>
+              Selamat datang <?php echo $username; ?> sebagai <?php echo $level ?></li>
+          
         </ul>
-        
-      </section>
+       
+         
+          </section>
       <!-- Content -->
       <div id='content'>
-        <div class='panel panel-default grid'>
+        <div class='panel panel-default'>
           <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
-            Data Buku
-           
-               
+            <i class='icon-beer icon-large'></i>
+           Profil User
+            
           </div>
+          <div class='panel-body'>
           
-          <table class='table'>
+         <center>  <table class='table'>
            <tbody>
            
              
                 <?php
-          foreach ($buku_list as $row) {
-            echo " <tr><td width='120'>";
-            echo "<img src='".base_url('assets/uploads/').$row['gambar']."'width='200px;'>";
-            echo '</td><td>';
-            echo "<font face='calibri' size='3'>Judul : ".$row['judul']."<br>";
-            echo "Pengarang : ".$row['pengarang']."<br>";
-            echo "Sinopsis : ".$row['sinopsis']."<br>";
-            echo "Penerbit : ".$row['penerbit']."<br>";
-            echo "Tahun terbit : ".$row['tahun_terbit']."<br>";
-            echo "Jumlah Halaman : ".$row['jumlah_halaman']."<br>";
-            echo "Stok : ".$row['stok']."<br>";
-            echo "Harga : ".$row['harga']."<br>";
-            echo "<a href='".base_url('index.php/Buku/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'><font size='4' align='center'>Beli</button></a>";
-            echo '</font></td><td></tr>';
+          foreach ($user as $row) {
+            echo " <tr><td width='120' >";
+            echo "<font face='calibri' size='3'>Nama : ".$row['username'];
+            echo "</td></tr><tr><td><font face='calibri' size='3'>Email : ".$row['email'];
+            echo "</td></tr><tr><td><font face='calibri' size='3'>Alamat : ".$row['alamat'];
+            echo "</font></td></tr>";
+            echo "</td></tr><tr><td><a href='".base_url('index.php/user/update/'.$row['id_user'])."'><button type='submit' class='btn btn-success' style='width:100px;height:30px'>Update</button></a></td></tr>";
 
            
           }
@@ -113,10 +107,15 @@
 
           ?>
               
-              
-          
+           </table>
+            
+            </div>
           </div>
         </div>
-       
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- Javascripts -->
+   
   </body>
 </html>

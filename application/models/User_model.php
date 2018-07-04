@@ -1,11 +1,8 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
-* 
-*/
-class User extends CI_Model
+class User_model extends CI_Model
 {
-	
 	function __construct()
 	{
 		parent::__construct();
@@ -35,6 +32,30 @@ class User extends CI_Model
 			'password'=>md5($this->input->post('password'))
 		);
 		$this->db->insert('user',$object);
+		
+	}
+
+	public function profil()
+	{
+		$session_data=$this->session->userdata("logged_in");
+		$id=$session_data['id_user'];
+		$query = $this->db->query("Select * from user where id_user=$id");
+		return $query->result_array();
+		
+	}
+	public function updateById($id)
+	{
+		
+		$data = array('username' => $this->input->post('username'),
+			'alamat'=>$this->input->post('alamat'),  
+			'email'=>$this->input->post('email'));
+		$this->db->where('id_user', $id);
+		$this->db->update('user', $data);
+	}
+	public function profill($id)
+	{
+		$query = $this->db->query("Select * from user where id_user=$id");
+		return $query->result();
 		
 	}
 	
