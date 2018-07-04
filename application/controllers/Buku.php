@@ -29,8 +29,8 @@ class Buku extends CI_Controller {
 
 	public function bukuView()
 	{
-		$this->load->model('buku_model');
-		$object["buku_list"] = $this->buku_model->getBuku_list();
+		$this->load->model('Buku_model');
+		$object["buku_list"] = $this->Buku_model->getBuku_list();
 		$this->load->view('buku_view', $object);
 	}
 
@@ -39,13 +39,12 @@ class Buku extends CI_Controller {
 	{
 		$this->load->model('buku_model');
 		$this->load->model('kategori_model');
-		$this->form_validation->set_rules('judulBuku', 'judul', 'trim|required');
-		$this->form_validation->set_rules('pengarangBuku', 'pengarang', 'trim|required');
-		$this->form_validation->set_rules('penerbitBuku', 'penerbit', 'trim|required');
+		$this->form_validation->set_rules('judul', 'judul', 'trim|required');
+		$this->form_validation->set_rules('pengarang', 'pengarang', 'trim|required');
+		$this->form_validation->set_rules('penerbit', 'penerbit', 'trim|required');
 		$this->form_validation->set_rules('tahun_terbit', 'tahun_terbit', 'trim|required');
-		$this->form_validation->set_rules('id_kategori', 'id_kategori', 'trim|required');
+		$this->form_validation->set_rules('kategori', 'kategori', 'trim|required');
 		$this->form_validation->set_rules('jumlah_halaman', 'jumlah_halaman', 'trim|required');
-		$this->form_validation->set_rules('gambar', 'gambar', 'trim|required');
 		$this->form_validation->set_rules('sinopsis', 'sinopsis', 'trim|required');
 		$this->form_validation->set_rules('stok', 'stok', 'trim|required');
 		$this->form_validation->set_rules('harga', 'harga', 'trim|required');

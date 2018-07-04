@@ -32,9 +32,10 @@ class Buku_model extends CI_Model {
 
 	public function getBuku_list()
 	{
-		$query = $this->db->query("Select buku.*, kategori.* from buku,kategori where buku.id_kategori = kategori.id_kategori");
+		$query = $this->db->query("SELECT * from buku inner join kategori on buku.id_kategori = kategori.id_kategori");
 		return $query->result_array();
 	}
+
 	public function updateById($id)
 	{
 		$data = array('judul' => $this->input->post('judul'),

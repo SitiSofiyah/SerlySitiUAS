@@ -22,7 +22,7 @@
 	public function index()
 	{	
 		$this->load->model('Kategori_model');
-		$object["kategori"] = $this->kategori_model->getTampil();
+		$object['Kategori'] = $this->Kategori_model->getTampil();
 		$this->load->view('tampilKategori', $object);
 	}
 
