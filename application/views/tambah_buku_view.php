@@ -26,13 +26,13 @@
             <i class='icon-dashboard'></i>
             <a href="<?php echo base_url('index.php/buku')?>">Dashboard</a>
           </li>
-          <li class='launcher'>
-            <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/buku/buku_view')?>">Buku</a>
-          </li>
           <li class='active launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
+            <a href="<?php echo base_url('index.php/buku/bukuView')?>">Buku</a>
+          </li>
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/kategori/tampilKategori')?>">Kategori</a>
           </li>
           <!-- <li class='launcher'>
             <i class='icon-table'></i>
@@ -100,12 +100,59 @@
           </div>
           <div class='panel-body'>
             <table class="table table-striped">
-       <div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
-      <?php echo form_open_multipart('kategori/create/'.$this->uri->segment(3)); ?>
+
+              <div class="container">
+      <div class="panel-heading">
+        <div class="table-striped">
+           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div>
+   <!--  <thead>
+      <tr>
+      <th class= "text-center">no</th>
+      <th class= "text-center">judul Buku</th>
+      <th class= "text-center">Pengarang</th>
+      <th class= "text-center">Penerbit</th>
+      <th class= "text-center">tahun terbit</th>
+      <th class= "text-center">id_kategori</th>
+      <th class= "text-center">jumlah Halaman</th>
+      <th class= "text-center">gambar</th>
+      <th class= "text-center">sinopsis</th>
+      <th class= "text-center">stok</th>
+      <th class= "text-center">harga</th>
+      <th class= "text-center">aksi</th>
+    </thead> -->
+
+    <!-- <body> -->
+    <h1 class="text-center">tambah data buku</h1>
+
+    <div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
+      <?php echo form_open_multipart('buku/create/'.$this->uri->segment(3)); ?>
       <?php echo validation_errors(); ?>
       <div class="form-group">
-        <label for="">Nama Kategori</label>
-        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Input field">
+        <label for="">Judul Buku</label>
+        <input type="text" class="form-control" id="judul" name="judul" placeholder="Input field">
+        <label for="">Pengarang</label>
+        <input type="text" class="form-control" id="pengarang" name="pengarang" placeholder="Input field">
+        <label for="">Penerbit</label>
+        <input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Input field">
+        <label for="">kategori</label><br>
+        <select name="kategori" class="form-control">
+          <option selected="selected">---</option>
+          <?php  foreach ($kategori as $key) : ?>
+          <option value="<?php echo $key['id_kategori'] ?>"><?php echo $key['kategori'] ?></option>
+           <?php  endforeach ?>
+        </select><br>
+        <label for="">tahun terbit</label>  
+        <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Input field">
+        <label for="">Jumlah Halaman</label>
+        <input type="text" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Input field">
+        <label for="">Sinopsis</label>
+        <input type="text" class="form-control" id="sinopsis" name="sinopsis" placeholder="Input field">
+        <label for="">Stok</label>
+        <input type="text" class="form-control" id="stok" name="stok" placeholder="Input field">
+        <label for="">Harga</label>
+        <input type="text" class="form-control" id="harga" name="harga" placeholder="Input field">
+        <label for="">Gambar</label>
+        <input type="file" id="userfile" name="userfile" placeholder="Input field">
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -113,18 +160,11 @@
       <?php echo form_close(); ?>
       
     </div>
-      
-  </table>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/'.$key['id_buku']) ?>"> back</a></td>
-
-    <!-- Footer -->
-    <!-- Javascripts -->
-   
+    <!-- jQuery -->
+    
+    <!-- Bootstrap JavaScript -->
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="Hello World"></script>
   </body>
-</html>
+  </html>

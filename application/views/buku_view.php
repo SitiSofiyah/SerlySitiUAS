@@ -26,11 +26,11 @@
             <i class='icon-dashboard'></i>
             <a href="<?php echo base_url('index.php/buku')?>">Dashboard</a>
           </li>
-          <li class='launcher'>
-            <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/buku/buku_view')?>">Buku</a>
-          </li>
           <li class='active launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/buku/bukuView')?>">Buku</a>
+          </li>
+          <li class='launcher'>
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
           </li>
@@ -100,20 +100,48 @@
           </div>
           <div class='panel-body'>
             <table class="table table-striped">
-       <div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
-      <?php echo form_open_multipart('kategori/create/'.$this->uri->segment(3)); ?>
-      <?php echo validation_errors(); ?>
-      <div class="form-group">
-        <label for="">Nama Kategori</label>
-        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Input field">
-      </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="container">
+      <div class="panel-heading">
+        <div class="table-striped">
+           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div>
+    <thead>
+      <tr>
+      <th class= "text-center">no</th>
+      <th class= "text-center">judul Buku</th>
+      <th class= "text-center">Pengarang</th>
+      <th class= "text-center">Penerbit</th>
+      <th class= "text-center">tahun terbit</th>
+      <th class= "text-center">id_kategori</th>
+      <th class= "text-center">jumlah Halaman</th>
+      <th class= "text-center">gambar</th>
+      <th class= "text-center">sinopsis</th>
+      <th class= "text-center">stok</th>
+      <th class= "text-center">harga</th>
+      <th class= "text-center">aksi</th>
+    </thead>
 
-      <?php echo form_close(); ?>
+    <tbody>
+      <?php $no=1; foreach ($buku_list as $key) : ?>
+        <tr>
+        <td class= "text-center"><?php echo $no ?></td>
+        <td class= "text-center"><?php echo $key['judul'] ?></td>
+        <td class= "text-center"><?php echo $key['pengarang'] ?></td>
+        <td class= "text-center"><?php echo $key['penerbit'] ?></td>
+        <td class= "text-center"><?php echo $key['tahun_terbit'] ?></td>
+        <td class= "text-center"><?php echo $key['kategori'] ?></td>
+        <td class= "text-center"><?php echo $key['jumlah_halaman'] ?></td>
+        <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td>
+        <td class= "text-center"><?php echo $key['sinopsis'] ?></td>
+        <td class= "text-center"><?php echo $key['stok'] ?></td>
+        <td class= "text-center"><?php echo $key['harga'] ?></td>
+  
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>
       
-    </div>
-      
+    </tr>
+      <?php $no++; endforeach?>
+    </tbody>
   </table>
           </div>
             </div>

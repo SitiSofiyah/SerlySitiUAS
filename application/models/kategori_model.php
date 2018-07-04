@@ -15,9 +15,9 @@ class Kategori_model extends CI_Model {
 
 		$this->db->insert('kategori', $object);
 	}
-	public function getKategori_list()
+	public function getTampil()
 	{
-		$query = $this->db->query("Select*from kategori");
+		$query = $this->db->query("Select * from kategori");
 		return $query->result_array();
 	}
 	public function updateById($id)
