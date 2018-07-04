@@ -31,7 +31,7 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/tampilKategori')?>">Kategori</a>
+            <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
           </li>
           <!-- <li class='launcher'>
             <i class='icon-table'></i>

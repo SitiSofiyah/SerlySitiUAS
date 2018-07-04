@@ -28,7 +28,7 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/buku/buku_view')?>">Buku</a>
+            <a href="<?php echo base_url('index.php/buku/bukuView')?>">Buku</a>
           </li>
           <li class='active launcher'>
             <i class='icon-file-text-alt'></i>
