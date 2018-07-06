@@ -25,8 +25,7 @@ class Welcome extends CI_Controller {
 	public function createPdf()
 	{
 		$this->load->library('pdf');
-		$data = "hello world";
-		$this->pdf->load_view('welcome_message');
+		$this->pdf->load_view('loginView');
 	}
 
 	 // $this->load->library('pdf');

@@ -27,6 +27,15 @@ class Buku extends CI_Controller {
 		$this->load->view('dashboardAdmin', $object);
 	}
 
+	public function laporan()
+	{
+		$this->load->model('buku_model');
+		$object["buku_list"] = $this->buku_model->getBuku_list();
+		//$this->load->view('print', $object);
+		$this->load->library('pdf');
+		$this->pdf->load_view('print', $object);
+	}
+
 	public function bukuView()
 	{
 		$this->load->model('Buku_model');
