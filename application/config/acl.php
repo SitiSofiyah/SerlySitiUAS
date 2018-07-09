@@ -72,6 +72,10 @@ $acl = array(
 		'user' => true,
  		'admin' => false,
 	),
+	'pembelian' => array(
+		'user' => true,
+ 		'admin' => true,
+	),
 );
 
 /* -----------------------------

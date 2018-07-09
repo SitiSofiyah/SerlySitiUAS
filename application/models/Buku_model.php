@@ -36,6 +36,12 @@ class Buku_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getBuku($id)
+	{
+		$query = $this->db->query("SELECT * from buku where id_buku=$id");
+		return $query->result();
+	}
+
 	public function updateById($id)
 	{
 		$data = array('judul' => $this->input->post('judul'),

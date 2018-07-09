@@ -3,30 +3,30 @@
   <head>
     <meta charset='utf-8'>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-    <title>Online BookStore</title>
+    <title>Dashboard</title>
     <meta content='lab2023' name='author'>
     <meta content='' name='description'>
     <meta content='' name='keywords'>
-  <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
      <link href="<?php echo base_url()?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
     
   </head>
   <body class='main page'>
     <!-- Navbar -->
     
+     
       <!-- Sidebar -->
       <section id='sidebar'>
         <i class='icon-align-justify icon-large' id='toggle'></i>
         <ul id='dock'>
-          <li class='launcher'>
-            <i class='icon-dashboard'></i>
-             <a href="<?php echo base_url('index.php/user')?>">Dashboard</a>
-          </li>
           <li class='active launcher'>
+            <i class='icon-dashboard'></i>
+            <a href="<?php echo base_url('index.php/user')?>">Dashboard</a>
+          </li>
+          <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-           <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
+            <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
           <li class='launcher'>
             <i class='icon-table'></i>
@@ -36,7 +36,7 @@
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
           </li>
-           <li class='launcher dropdown hover'>
+          <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
             <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
             <!-- <ul class='dropdown-menu'>
@@ -70,53 +70,60 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Tables</li>
-          <li><a href="#">Lorem</a></li>
-          <li class='active'><a href="#">ipsum</a></li>
+         
         </ul>
-        
-      </section>
+       
+         
+          </section>
       <!-- Content -->
       <div id='content'>
-        <div class='panel panel-default grid'>
+        <div class='panel panel-default'>
           <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
-            Data Buku
-           
-               
+            <i class='icon-beer icon-large'></i>
+           Form Peminjaman Buku
+            
           </div>
+          <div class='panel-body'>
           
-          <table class='table'>
-           <tbody>
-           
-             
-                <?php
-          foreach ($buku_list as $row) {
-            echo " <tr><td width='120'>";
-            echo "<img src='".base_url('assets/uploads/').$row['gambar']."'width='200px;'>";
-            echo '</td><td>';
-            echo "<font face='calibri' size='3'>Judul : ".$row['judul']."<br>";
-            echo "Pengarang : ".$row['pengarang']."<br>";
-            echo "Sinopsis : ".$row['sinopsis']."<br>";
-            echo "Penerbit : ".$row['penerbit']."<br>";
-            echo "Tahun terbit : ".$row['tahun_terbit']."<br>";
-            echo "Jumlah Halaman : ".$row['jumlah_halaman']."<br>";
-            echo "Stok : ".$row['stok']."<br>";
-            echo "Harga : ".$row['harga']."<br>";
-            echo "<a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'><font size='4' align='center'>Beli</button></a>";
-            echo '</font></td><td></tr>';
+            <div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
+      <?php echo form_open_multipart('pembelian/prosesbeli/'.$this->uri->segment(3)); ?>
+      <?php echo validation_errors(); ?>
+      <div class="form-group">
+        <label for="">Judul Buku</label>
+        <input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku[0]->judul ?>" disabled>
+         <input type="hidden" class="form-control" id="hrg" name="hrg" placeholder="Input field" value="<?php echo $buku[0]->harga ?>" disabled>
+       
+        <label for="">Jumlah Pinjam</label><br>
+        <select name="jml" class="form-control" id="jml" onchange="changeValue(this.value)">
+          <option>pilih jumlah</option>
+          <?php for($a=1;$a<=$buku[0]->stok;$a++) { ?>
+          <option value="<?php echo $a ?>"><?php echo $a ?></option>
+          <?php } ?>
+        </select><br>
+        <label for="">Total Harga</label>  
+        <input type="text" class="form-control" id="harga" name="harga" placeholder="Input field" >
+       
+      </div>
 
-           
-          }
-
-
-
-          ?>
-              
-              
-          
+      <button type="submit" class="btn btn-primary">Submit</button>
+    <script type="text/javascript">   
+    function changeValue(jml){ 
+    document.getElementById('harga').value = document.getElementById('jml').value*document.getElementById('hrg').value;
+    
+    }; 
+    </script> 
+      <?php echo form_close(); ?>
+      
+      
+    </div>
+            
+            </div>
           </div>
         </div>
-       
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- Javascripts -->
+   
   </body>
 </html>
