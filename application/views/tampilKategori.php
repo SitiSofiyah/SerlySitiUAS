@@ -33,7 +33,7 @@
     </thead>
 
     <tbody>
-      <?php $no=1; foreach ($tampilKategori as $key) : ?>
+      <?php $no=1; foreach ($Kategori as $key) : ?>
         <tr>
         <td class= "text-center"><?php echo $no ?></td>
         <td class= "text-center"><?php echo $key['kategori'] ?></td>

@@ -108,7 +108,8 @@
               <div class="container">
       <div class="panel-heading">
         <div class="table-striped">
-           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div>
+           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a>
+            <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/laporan/'?>" >Print</a><br></div>
     <thead>
       <tr>
       <th class= "text-center">no</th>
