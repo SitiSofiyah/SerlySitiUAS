@@ -71,6 +71,8 @@
 				<label for="">Gambar</label><br>
 		        <?php  echo "<img src='".base_url('assets/uploads/').$buku[0]->gambar."'width='200px;'>";  ?>
 		        <input type="file" id="userfile" name="userfile" placeholder="Input field">
+		        <button type="submit" class="btn btn-primary">Submit</button>
+		        <?php echo form_close(); ?>
 		</div>
 		<!-- jQuery
 		<script src="//code.jquery.com/jquery.js"></script>
