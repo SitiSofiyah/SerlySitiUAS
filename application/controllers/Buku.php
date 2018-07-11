@@ -98,7 +98,7 @@ class Buku extends CI_Controller {
 		$this->form_validation->set_rules('stok', 'stok', 'trim|required');
 		$this->form_validation->set_rules('harga', 'harga', 'trim|required');
 
-		$object['pegawai'] = $this->buku_model->getBuku_list($id);
+		$object['buku'] = $this->buku_model->getBuku($id);
 		
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('edit_buku_view', $object);
