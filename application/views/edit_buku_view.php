@@ -46,7 +46,33 @@
           <li class='title'>Pengelolaan Data Buku</li></ul>
        
            <!-- <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div> -->
-	<body>
+         </ul>
+
+         <div class='label label-danger'>
+            Danger
+          </div>
+          <div class='label label-info'>
+            Info
+          </div>
+        </div>
+      </section>
+      <!-- Content -->
+      <div id='content'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            <i class='icon-beer icon-large'></i>
+          DashBoard
+          </div>
+          <div class='panel-body'>
+            <div class='page-header'>
+              <div class='panel-heading'>
+            <i class='icon-table icon-large'></i>
+            Dashboard Admin
+          </div>
+          <div class='panel-body'>
+            <table class="table table-striped">
+<div class="container">
+      <div class="panel-heading">
 		<h1 class="text-center">Update Data Buku</h1>
 
 		<div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
