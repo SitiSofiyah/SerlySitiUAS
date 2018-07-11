@@ -24,10 +24,12 @@ class User_model extends CI_Model
 	public function daftar()
 	{
 		$level = "user";
+		$gambar = "user.png";
 		$object = array(
 			'username'=> $this->input->post('username'),
 			'email'=> $this->input->post('email'),
 			'alamat'=> $this->input->post('alamat'),
+			'gambar'=> $gambar,
 			'level'=> $level,
 			'password'=>md5($this->input->post('password'))
 		);
@@ -45,12 +47,22 @@ class User_model extends CI_Model
 	}
 	public function updateById($id)
 	{
-		
-		$data = array('username' => $this->input->post('username'),
+		if($this->upload->data('file_name')=="")
+		{
+			$data = array('username' => $this->input->post('username'),
 			'alamat'=>$this->input->post('alamat'),  
 			'email'=>$this->input->post('email'));
-		$this->db->where('id_user', $id);
-		$this->db->update('user', $data);
+			$this->db->where('id_user', $id);
+			$this->db->update('user', $data);
+		} else{
+			$data = array('username' => $this->input->post('username'),
+			'alamat'=>$this->input->post('alamat'),
+			'gambar'=>$this->upload->data('file_name'),
+			'email'=>$this->input->post('email'));
+			$this->db->where('id_user', $id);
+			$this->db->update('user', $data);
+		}
+		
 	}
 	public function profill($id)
 	{

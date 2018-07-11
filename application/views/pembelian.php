@@ -92,6 +92,8 @@
         <label for="">Judul Buku</label>
         <input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku[0]->judul ?>" disabled>
          <input type="hidden" class="form-control" id="hrg" name="hrg" placeholder="Input field" value="<?php echo $buku[0]->harga ?>" disabled>
+          <input type="hidden" class="form-control" id="stk" name="stk" placeholder="Input field" value="<?php echo $buku[0]->stok ?>" disabled>
+          <input type="hidden" class="form-control" id="stok" name="stok" placeholder="Input field">
        
         <label for="">Jumlah Pinjam</label><br>
         <select name="jml" class="form-control" id="jml" onchange="changeValue(this.value)">
@@ -102,13 +104,14 @@
         </select><br>
         <label for="">Total Harga</label>  
         <input type="text" class="form-control" id="harga" name="harga" placeholder="Input field" >
-       
+     
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
     <script type="text/javascript">   
     function changeValue(jml){ 
     document.getElementById('harga').value = document.getElementById('jml').value*document.getElementById('hrg').value;
+    document.getElementById('stok').value = document.getElementById('stk').value-document.getElementById('jml').value;
     
     }; 
     </script> 

@@ -51,11 +51,28 @@ class User extends CI_Controller {
 		$data['user'] = $this->user_model->profill($id);
 		$object["user"] = $this->user_model->profil();
 
+		
+		
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('updateUser',$data);
 		} else {
-			$this->user_model->updateById($id);
-			$this->load->view('profil',$object);
+			$config['upload_path']      ='./assets/uploads';
+			$config['allowed_types']    ='gif|jpg|png';
+			$config['max_size']         =1000000000;
+			$config['max_width']        =10240;
+			$config['max_height']       =7680;
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload('gambar'))
+			{
+				$this->user_model->updateById($id);
+				$this->load->view('profil',$object);
+			}
+			else
+			{
+				$this->user_model->updateById($id);
+				$this->load->view('profil',$object);;
+			}
+			
 		}
 		
 	

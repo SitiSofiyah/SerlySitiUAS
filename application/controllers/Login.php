@@ -80,7 +80,7 @@ class Login extends CI_Controller {
 			$this->load->view('daftar');
 		}else{
 			$this->load->model('user_model');
-			$this->User->daftar();
+			$this->user_model->daftar();
 			$this->load->view('loginView');
 			
 		}

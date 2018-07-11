@@ -93,6 +93,7 @@
              
                 <?php
           foreach ($user as $row) {
+            echo "</td><img src='".base_url('assets/uploads/').$row['gambar']."'width='150px;'>";
             echo " <tr><td width='120' >";
             echo "<font face='calibri' size='3'>Nama : ".$row['username'];
             echo "</td></tr><tr><td><font face='calibri' size='3'>Email : ".$row['email'];

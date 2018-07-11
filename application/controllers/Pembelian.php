@@ -37,7 +37,9 @@ class Pembelian extends CI_Controller {
 	{
 		$this->load->model('pembelian_model');
 		$this->pembelian_model->prosesbeli($id);
-		$this->load->view('dataBuku');
+		$this->load->model('buku_model');
+		$data["buku_list"] = $this->buku_model->getBuku_list();
+		$this->load->view('dataBuku',$data);
 	}
 
 	
