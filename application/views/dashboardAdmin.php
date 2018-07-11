@@ -107,7 +107,11 @@
           </div>
           <div class='panel-body'>
             <table class="table table-striped">
-    <thead>
+
+              <center><h1> SELAMAT DATANG DI DASHBOARD ADMIN </h1></center>
+
+              
+    <!-- <thead>
       <tr>
       <th class= "text-center">no</th>
       <th class= "text-center">judul Buku</th>
@@ -120,8 +124,8 @@
       <th class= "text-center">sinopsis</th>
       <th class= "text-center">stok</th>
       <th class= "text-center">harga</th>
-      <th class= "text-center">aksi</th>
-    </thead>
+    <!--   <th class= "text-center">aksi</th> -->
+    <!-- </thead>
 
     <tbody>
       <?php $no=1; foreach ($buku_list as $key) : ?>
@@ -136,14 +140,14 @@
         <td class= "text-center"><?php echo $key['gambar'] ?></td>
         <td class= "text-center"><?php echo $key['sinopsis'] ?></td>
         <td class= "text-center"><?php echo $key['stok'] ?></td>
-        <td class= "text-center"><?php echo $key['harga'] ?></td>
+        <td class= "text-center"><?php echo $key['harga'] ?></td> -->
 
   
-        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
-        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>
+        <!-- <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td> -->
       
-    </tr>
-      <?php $no++; endforeach?>
+   <!--  </tr>
+      <?php $no++; endforeach?> -->
     </tbody>
   </table>
           </div>

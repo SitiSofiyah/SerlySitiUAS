@@ -31,7 +31,11 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/tampilKategori')?>">Kategori</a>
+            <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
+          </li>
+           <li class='launcher dropdown hover'>
+            <i class='icon-flag'></i>
+            <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
           </li>
            </ul>
         <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
@@ -39,38 +43,8 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Pengelolaan Data Buku</li>
-          <!-- <li><a href="#">Lorem</a></li>
-          <li class='active'><a href="#">ipsum</a></li> -->
-        </ul>
+          <li class='title'>Pengelolaan Data Buku</li></ul>
        
-          <div class='label label-danger'>
-            Danger
-          </div>
-          <div class='label label-info'>
-            Info
-          </div>
-        </div>
-      </section>
-      <!-- Content -->
-      <div id='content'>
-        <div class='panel panel-default'>
-          <div class='panel-heading'>
-            <i class='icon-beer icon-large'></i>
-          DashBoard
-          </div>
-          <div class='panel-body'>
-            <div class='page-header'>
-              <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
-            Dashboard Admin
-          </div>
-          <div class='panel-body'>
-            <table class="table table-striped">
-
-              <div class="container">
-      <div class="panel-heading">
-        <div class="table-striped">
            <!-- <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div> -->
 	<body>
 		<h1 class="text-center">Update Data Buku</h1>
@@ -78,11 +52,11 @@
 		<div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
 			<?php echo form_open('buku/update/'.$this->uri->segment(3)); ?>
 			<?php echo validation_errors(); ?>
-				<label for="">Judul Buku</label>
+				<label for="">judul</label>
 				<input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku[0]->judul ?>">
-				<label for="">Pengarang</label>
+				<label for="">pengarang</label>
 				<input type="text" class="form-control" id="pengarang" name="pengarang" placeholder="Input field" value="<?php echo $buku[0]->pengarang ?>">
-				<label for="">Penerbit</label>
+				<label for="">penerbit</label>
 				<input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Input field" value="<?php echo $buku[0]->penerbit ?>">
 				<label for="">tahun terbit</label>
 				<input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Input field" value="<?php echo $buku[0]->tahun_terbit ?>">
@@ -94,11 +68,11 @@
 				<input type="text" class="form-control" id="stok" name="stok" placeholder="Input field" value="<?php echo $buku[0]->stok ?>">
 				<label for="">Harga</label>
 				<input type="text" class="form-control" id="harga" name="harga" placeholder="Input field" value="<?php echo $buku[0]->harga ?>">
-		
-			<button type="submit" class="btn btn-primary">Submit</button>
-			<?php echo form_close(); ?>
+				<label for="">Gambar</label><br>
+		        <?php  echo "<img src='".base_url('assets/uploads/').$buku[0]->gambar."'width='200px;'>";  ?>
+		        <input type="file" id="userfile" name="userfile" placeholder="Input field">
 		</div>
-		<!-- jQuery -->
+		<!-- jQuery
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
