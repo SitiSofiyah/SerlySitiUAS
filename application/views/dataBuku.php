@@ -7,9 +7,16 @@
     <meta content='lab2023' name='author'>
     <meta content='' name='description'>
     <meta content='' name='keywords'>
-  <link href="<?php echo base_url()?>assets/stylesheets/application-a07755f5.css" rel="stylesheet" type="text/css" />
-     <link href="<?php echo base_url()?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+ 
+   
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/DataTables/css/dataTables.bootstrap.min.css" />
+
+
+   <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/css/bootstrap.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/DataTables/js/dataTables.bootstrap.min.js"></script>
     
     
   </head>
@@ -39,32 +46,7 @@
            <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
             <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
-            <!-- <ul class='dropdown-menu'>
-              <li class='dropdown-header'>Launcher description</li>
-              <li>
-                <a href='#'>Action</a>
-              </li>
-              <li>
-                <a href='#'>Another action</a>
-              </li>
-              <li>
-                <a href='#'>Something else here</a>
-              </li>
-            </ul>
-          </li>
-          <li class='launcher'>
-            <i class='icon-bookmark'></i>
-            <a href='#'>Bookmarks</a>
-          </li>
-          <li class='launcher'>
-            <i class='icon-cloud'></i>
-            <a href='#'>Backup</a>
-          </li>
-          <li class='launcher'>
-            <i class='icon-bug'></i>
-            <a href='#'>Feedback</a>
-          </li>
-        </ul> -->
+          
         <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
       </section>
       <!-- Tools -->
@@ -82,41 +64,47 @@
           <div class='panel-heading'>
             <i class='icon-table icon-large'></i>
             Data Buku
-           
-               
           </div>
-          
-          <table class='table'>
+        
+           
+          <div class='panel-body'>
+               
+         
+         <div class="table-responsive">
+          <table width="800" class="table table-striped" id="example">
+           <thead>
+             <tr >
+               <th width="50">Buku</th>
+               <th >Detail Buku</th>
+             </tr>
+           </thead>
            <tbody>
-           
-             
-                <?php
-          foreach ($buku_list as $row) {
-            echo " <tr><td width='120'>";
-            echo "<img src='".base_url('assets/uploads/').$row['gambar']."'width='200px;'>";
-            echo '</td><td>';
-            echo "<font face='calibri' size='3'>Judul : ".$row['judul']."<br>";
-            echo "Pengarang : ".$row['pengarang']."<br>";
-            echo "Sinopsis : ".$row['sinopsis']."<br>";
-            echo "Penerbit : ".$row['penerbit']."<br>";
-            echo "Tahun terbit : ".$row['tahun_terbit']."<br>";
-            echo "Jumlah Halaman : ".$row['jumlah_halaman']."<br>";
-            echo "Stok : ".$row['stok']."<br>";
-            echo "Harga : ".$row['harga']."<br>";
-            echo "<a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'><font size='4' align='center'>Beli</button></a>";
-            echo '</font></td><td></tr>';
-
-           
-          }
-
-
-
-          ?>
-              
-              
+          <?php
+          foreach ($buku_list as $row) : ?>
+             <tr><td width="50">
+               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px">
+          </td><td> <font face='calibri' size='3'>Judul : <?php echo $row['judul']; ?><br>
+            Pengarang : <?php echo $row['pengarang']; ?><br>
+            Sinopsis : <?php echo $row['sinopsis']; ?><br>
+            Penerbit : <?php echo $row['penerbit']; ?><br>
+             Tahun Terbit : <?php echo $row['tahun_terbit']; ?><br>
+             Jumlah Halaman : <?php echo $row['jumlah_halaman']; ?><br>
+            Stok : <?php echo $row['stok']; ?><br>
+             Harga : <?php echo $row['harga']; ?><br>
+           <?php  echo "<a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'>Beli</button></a> <a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'><span class='icon-shoping-cart'>Add to Cart</button></a>"; ?>
           
+            </font></td></tr>
+          <?php endforeach; ?> 
+              
+          </tbody>
+        </table>
           </div>
         </div>
-       
+      
+           <script type="text/javascript">
+  $(document).ready(function(){
+    $('#example').DataTable();
+  });
+</script>
   </body>
 </html>

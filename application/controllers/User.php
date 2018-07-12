@@ -26,7 +26,8 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('buku_model');
-		$data["buku_list"] = $this->buku_model->getBuku_update();		
+		$data["buku_list"] = $this->buku_model->getBuku_update();
+		$data["buku_laris"] = $this->buku_model->getBuku_laris();			
 		$this->load->view('dashboardUser',$data);
 	
 	}
@@ -37,6 +38,15 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 		$data["user"] = $this->user_model->profil();
 		$this->load->view('profil',$data);
+	
+	}
+
+	public function kategoriUser()
+	{
+		
+		$this->load->model('kategori_model');
+		$data["user"] = $this->kategori_model->getKategori();
+		$this->load->view('kategoriUser',$data);
 	
 	}
 
@@ -65,12 +75,12 @@ class User extends CI_Controller {
 			if ( ! $this->upload->do_upload('gambar'))
 			{
 				$this->user_model->updateById($id);
-				$this->load->view('profil',$object);
+				redirect('user/profil','refresh');
 			}
 			else
 			{
 				$this->user_model->updateById($id);
-				$this->load->view('profil',$object);;
+				redirect('user/profil','refresh');
 			}
 			
 		}
