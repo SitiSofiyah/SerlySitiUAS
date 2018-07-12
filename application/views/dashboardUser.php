@@ -86,19 +86,69 @@
             
           </div>
           <div class='panel-body'>
-          
-            <?php
-          foreach($buku_list as $row) {
-            echo "<img src='".base_url('assets/uploads/').$row['gambar']."'width='200px;'> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;";
-             
-          }
+            
+
+            <div class="row">
+               <?php
+          foreach($buku_list as $row) {?>
+            <div class="col-md-3">
+
+            <div class="thumbnail">
+           <?php   echo "<img src='".base_url('assets/uploads/').$row['gambar']."' style='height:150px;'>" ;
           ?>
-           </table>
+              <div class="caption">
+                <h1> <?php   echo $row['judul'] ;?>
+                </h1>
+                <a class="btn btn-success" href="#">Beli</a>
+              </div>
+              </div>
+
+            <div class="block" >
+
+            </div>
+          
+          </div>
+          <?php } ?>
+
+     </div>
+           <div class='panel-heading'  >
+            <i class='icon-beer icon-large'></i>
+           Buku Terlaris
+            
+          </div>
+
+            
+
+            <div class="row">
+               <?php
+          foreach($buku_laris as $row) {?>
+            <div class="col-md-3">
+
+            <div class="thumbnail">
+           <?php   echo "<img src='".base_url('assets/uploads/').$row['gambar']."' style='height:150px;'>" ;
+          ?>
+              <div class="caption">
+                <h1> <?php   echo $row['judul'] ;?>
+                </h1>
+                <a class="btn btn-success" href="#">Beli</a>
+              </div>
+              </div>
+
+            <div class="block" >
+
+            </div>
+          
+          </div>
+          <?php } ?>
+
+            
+         
             
             </div>
           </div>
         </div>
       </div>
+
     </div>
     <!-- Footer -->
     <!-- Javascripts -->
