@@ -88,11 +88,11 @@ class Buku extends CI_Controller {
 	{
 		//load library
 		$this->load->model('buku_model');
-		$this->form_validation->set_rules('judulBuku', 'judul', 'trim|required');
-		$this->form_validation->set_rules('pengarangBuku', 'pengarang', 'trim|required');
-		$this->form_validation->set_rules('penerbitBuku', 'penerbit', 'trim|required');
+		$this->form_validation->set_rules('judul', 'judul', 'trim|required');
+		$this->form_validation->set_rules('pengarang', 'pengarang', 'trim|required');
+		$this->form_validation->set_rules('penerbit', 'penerbit', 'trim|required');
 		$this->form_validation->set_rules('tahun_terbit', 'tahun_terbit', 'trim|required');
-		$this->form_validation->set_rules('id_kategori', 'id_kategori', 'trim|required');
+		// $this->form_validation->set_rules('id_kategori', 'id_kategori', 'trim|required');
 		$this->form_validation->set_rules('jumlah_halaman', 'jumlah_halaman', 'trim|required');
 		$this->form_validation->set_rules('sinopsis', 'sinopsis', 'trim|required');
 		$this->form_validation->set_rules('stok', 'stok', 'trim|required');
@@ -103,8 +103,27 @@ class Buku extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('edit_buku_view', $object);
 		} else {
-			$this->buku_model->updateById($id);
-			$this->load->view('edit_buku_sukses');
+			// $this->buku_model->updateById($id);
+			// $this->load->view('edit_buku_sukses');
+			$config['upload_path']      ='./assets/uploads';
+			$config['allowed_types']    ='gif|jpg|png';
+			$config['max_size']         =1000000000;
+			$config['max_width']        =10240;
+			$config['max_height']       =7680;
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('userfile'))
+			{
+				$this->buku_model->updateById($id);
+				echo "<script> alert('data buku telah di update, tanpa gambar');
+				window.location.href='../../buku/bukuView';</script>";
+			}else
+			{
+				$this->buku_model->updateById($id);
+				echo "<script> alert('data buku telah di update, dengan gambar');
+				window.location.href='../../buku/bukuView';</script>";
+			}
 		}
 		
 	}
@@ -113,7 +132,7 @@ class Buku extends CI_Controller {
 	{
 		$this->load->model('buku_model');
 		$this->buku_model->delete($id);
-		redirect('buku');
+		redirect('buku/bukuView');
 
 		
 	}

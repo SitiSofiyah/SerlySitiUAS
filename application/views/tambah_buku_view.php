@@ -32,6 +32,10 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/kategori/create')?>">Pembelian</a>
+          </li>
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/kategori/tampilKategori')?>">Kategori</a>
           </li>
           <!-- <li class='launcher'>

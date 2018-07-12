@@ -31,7 +31,11 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
+            <a href="<?php echo base_url('index.php/kategori/index')?>">Kategori</a>
+          </li>
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/kategori/create')?>">Pembelian</a>
           </li>
            <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
@@ -76,7 +80,7 @@
 		<h1 class="text-center">Update Data Buku</h1>
 
 		<div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
-			<?php echo form_open('buku/update/'.$this->uri->segment(3)); ?>
+			<?php echo form_open_multipart('buku/update/'.$this->uri->segment(3)); ?>
 			<?php echo validation_errors(); ?>
 				<label for="">judul</label>
 				<input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku[0]->judul ?>">
@@ -99,6 +103,7 @@
 		        <input type="file" id="userfile" name="userfile" placeholder="Input field">
 		        <button type="submit" class="btn btn-primary">Submit</button>
 		        <?php echo form_close(); ?>
+
 		</div>
 		<!-- jQuery
 		<script src="//code.jquery.com/jquery.js"></script>

@@ -34,6 +34,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/kategori/create')?>">Kategori</a>
           </li>
+           <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/kategori/create')?>">Pembelian</a>
+          </li>
            <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
             <a href='<?php echo base_url('index.php/login/logout')?>'>Logout</a>
@@ -105,8 +109,10 @@
           <div class='panel-body'>
             <table class="table table-striped">
        <div class="col-xs-12 col col-sm-12 col-md-12 col-lg-12">
-      <?php echo form_open_multipart('kategori/create/'.$this->uri->segment(3)); ?>
+      <?php echo form_open('kategori/create/'); ?>
       <?php echo validation_errors(); ?>
+
+      
       <div class="form-group">
         <label for="">Nama Kategori</label>
         <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Input field">

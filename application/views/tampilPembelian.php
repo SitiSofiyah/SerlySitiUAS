@@ -32,11 +32,11 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori')?>">Kategori</a>
+            <a href="<?php echo base_url('index.php/kategori/')?>">Kategori</a>
           </li>
           <li class='active launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/create')?>">Pembelian</a>
+            <a href="<?php echo base_url('index.php/pembelian/')?>">Pembelian</a>
           </li>
            <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
@@ -112,30 +112,33 @@
               <div class="container">
       <div class="panel-heading">
         <div class="table-striped">
-           <body>
-    <h1 class="text-center">Halaman Kategori</h1>
-
-    <div class="container">
-      <div class="panel-heading">
-        <div class="table-striped">
-           <a class="btn btn-primary" href="<?php echo base_url('index.php/kategori/create'); ?>" >Tambah</a><br></div>
-
-      <table class="table table-striped">
+           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a>
+            <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/laporan/'?>" >Print</a><br></div>
     <thead>
       <tr>
       <th class= "text-center">no</th>
-      <th class= "text-center">Nama Kategori</th>
-      <th class= "text-center">aksi</th>
+    <!--   <th class= "text-center">nama pembelian</th> -->
+      <th class= "text-center">judul buku</th>
+      <th class= "text-center">nama user</th>
+      <th class= "text-center">tanggal beli</th>
+      <th class= "text-center">jumlah beli</th>
+      <th class= "text-center">status</th>
     </thead>
 
     <tbody>
-      <?php $no=1; foreach ($Kategori as $key) : ?>
+      <?php $no=1; foreach ($buku_list as $key) : ?>
         <tr>
         <td class= "text-center"><?php echo $no ?></td>
-        <td class= "text-center"><?php echo $key['kategori'] ?></td>
-  
-        <!-- <td><a class="btn btn-success" a href="<?php echo base_url('index.php/kategori/update/'.$key['id_kategori']) ?>"> edit</a></td> -->
-        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/kategori/delete/'.$key['id_kategori']) ?>"> hapus</a></td>
+       <!--  <td class= "text-center"><?php echo $key[''] ?></td> -->
+        <td class= "text-center"><?php echo $key['judul'] ?></td>
+        <td class= "text-center"><?php echo $key['user'] ?></td>
+        <td class= "text-center"><?php echo $key['tgl_beli'] ?></td>
+        <td class= "text-center"><?php echo $key['jml_beli'] ?></td>
+        <td class= "text-center"><?php echo $key['status'] ?></td>
+        <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td>
+       
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>
       
     </tr>
       <?php $no++; endforeach?>
