@@ -26,7 +26,13 @@ class Buku_model extends CI_Model {
 
 	public function getBuku_update()
 	{
-		$query = $this->db->query("Select * from buku LIMIT 5");
+		$query = $this->db->query("Select * from buku LIMIT 4");
+		return $query->result_array();
+	}
+
+	public function getBuku_laris()
+	{
+		$query = $this->db->query("SELECT buku.*, sum(jml_beli) as totalBeli FROM buku inner join pembelian where buku.id_buku=pembelian.id_buku GROUP BY buku.id_buku ORDER BY totalBeli DESC LIMIT 4");
 		return $query->result_array();
 	}
 
@@ -44,31 +50,17 @@ class Buku_model extends CI_Model {
 
 	public function updateById($id)
 	{
-		if($this->upload->data('file_name')=="")
-		{
-			$data = array('judul' => $this->input->post('judul'),
-				'pengarang'=>$this->input->post('pengarang'),  
-				'penerbit'=>$this->input->post('penerbit'), 
-				'tahun_terbit'=>$this->input->post('tahun_terbit'),
-				'jumlah_halaman'=>$this->input->post('jumlah_halaman'),
-				'sinopsis'=>$this->input->post('sinopsis'),
-				'stok'=>$this->input->post('stok'),
-				'harga'=>$this->input->post('harga'),);
-			$this->db->where('id_buku', $id);
-			$this->db->update('buku', $data);
-		}else{
-			$data = array('judul' => $this->input->post('judul'),
-				'pengarang'=>$this->input->post('pengarang'),  
-				'penerbit'=>$this->input->post('penerbit'), 
-				'tahun_terbit'=>$this->input->post('tahun_terbit'),
-				'jumlah_halaman'=>$this->input->post('jumlah_halaman'),
-				'sinopsis'=>$this->input->post('sinopsis'),
-				'gambar'=>$this->upload->data('file_name'),
-				'stok'=>$this->input->post('stok'),
-				'harga'=>$this->input->post('harga'),);
-			$this->db->where('id_buku', $id);
-			$this->db->update('buku', $data);
-		}
+
+		$data = array('judul' => $this->input->post('judul'),
+			'pengarang'=>$this->input->post('pengarang'),  
+			'penerbit'=>$this->input->post('penerbit'), 
+			'tahun_terbit'=>$this->input->post('tahun_terbit'),
+			'jumlah_halaman'=>$this->input->post('jumlah_halaman'),
+			'sinopsis'=>$this->input->post('sinopsis'),
+			'stok'=>$this->input->post('stok'),
+			'harga'=>$this->input->post('harga'),);
+		$this->db->where('id_buku', $id);
+		$this->db->update('buku', $data);
 	}
 	
 	public function delete($id){
