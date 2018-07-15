@@ -94,12 +94,12 @@
         <div class='panel panel-default'>
           <div class='panel-heading'>
             <i class='icon-beer icon-large'></i>
-          DashBoard
+       <!--    DashBoard
           </div>
           <div class='panel-body'>
             <div class='page-header'>
               <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
+            <i class='icon-table icon-large'></i> -->
             Dashboard Admin
           </div>
           <div class='panel-body'>
@@ -108,7 +108,7 @@
               <div class="container">
       <div class="panel-heading">
         <div class="table-striped">
-           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div>
+          <!--  <a class="btn btn-primary" href="<?php echo 'http://localhost:81/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a><br></div> -->
    <!--  <thead>
       <tr>
       <th class= "text-center">no</th>

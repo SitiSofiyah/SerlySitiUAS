@@ -23,8 +23,8 @@ class Pembelian extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('pembelian_model');
-		$object["beli_list"] = $this->buku_model->getPembelian_list();
-		$this->load->view('viewPembelian', $object);
+		$object["beli_list"] = $this->pembelian_model->getPembelian_List();
+		$this->load->view('tampilPembelian', $object);
 	}
 	public function beli($id)
 	{

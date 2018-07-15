@@ -25,6 +25,10 @@ class Pembelian_model extends CI_Model {
 		$this->db->where('id_buku', $id);
 		$this->db->update('buku', $data);
 	}
+	public function getPembelian_List(){
+			$query = $this->db->query("SELECT * from pembelian inner join buku on buku.id_buku = pembelian.id_buku inner join user on user.id_user=pembelian.id_user");
+		return $query->result_array();
+	}
 	
 }
 

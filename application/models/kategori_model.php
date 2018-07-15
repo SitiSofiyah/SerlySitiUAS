@@ -20,12 +20,12 @@ class Kategori_model extends CI_Model {
 		$query = $this->db->query("Select * from kategori");
 		return $query->result_array();
 	}
-	public function updateById($id)
-	{
-		$data = array('kategori' => $this->input->post('kategori'));
-		$this->db->where('id_kategori', $id);
-		$this->db->update('kategori', $data);
-	}
+	// public function updateById($id)
+	// {
+	// 	$data = array('kategori' => $this->input->post('kategori'));
+	// 	$this->db->where('id_kategori', $id);
+	// 	$this->db->update('kategori', $data);
+	// }
 	public function getKategori($id_kategori)
 	{
 		$this->db->where('id_kategori', $id_kategori);
