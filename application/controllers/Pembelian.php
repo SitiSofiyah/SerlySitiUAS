@@ -33,6 +33,25 @@ class Pembelian extends CI_Controller {
 		$this->load->view('pembelian',$object);
 	}
 
+	public function beliCart()
+	{
+		$data=array(
+			'id'=>$this->input->post('id'),
+			'name'=>$this->input->post('nama'),
+			'price'=>$this->input->post('harga'),
+			'gambar'=>$this->input->post('gambar'),
+			'qty'=>$this->input->post('qty'),
+		);
+		$this->cart->insert($data);
+		redirect('shoppingCart','refresh');
+	}
+
+	public function addCart()
+	{
+		$data['cart']=$this->cart->contents();
+		$this->load->view('keranjang',$data);
+	}
+
 	public function prosesbeli($id)
 	{
 		$this->load->model('pembelian_model');

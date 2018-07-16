@@ -68,6 +68,10 @@ $acl = array(
 		'user' => false,
  		'admin' => true,
 	),
+	'cart' => array(
+		'user' => true,
+ 		'admin' => true,
+	),
 	'user' => array(
 		'user' => true,
  		'admin' => false,

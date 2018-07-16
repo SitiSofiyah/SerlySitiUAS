@@ -8,7 +8,14 @@ class Pembelian_model extends CI_Model {
 		parent::__construct();
 		
 	}
-
+	public function pembelian($order){
+		$this->db->insert('pembelian',$order);
+		return $this->db->insert_id();
+	}
+	public function detailPembelian($orderDetail){
+		$this->db->insert('detailPembelian',$orderDetail);
+		
+	}
 	public function prosesbeli($id){
 		$session_data=$this->session->userdata("logged_in");
 		$iduser=$session_data['id_user'];

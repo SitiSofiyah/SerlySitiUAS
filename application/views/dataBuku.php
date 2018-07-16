@@ -35,10 +35,7 @@
             <i class='icon-file-text-alt'></i>
            <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-          <li class='launcher'>
-            <i class='icon-table'></i>
-            <a href="#">Kategori</a>
-          </li>
+         
           <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
@@ -63,7 +60,9 @@
         <div class='panel panel-default grid'>
           <div class='panel-heading'>
             <i class='icon-table icon-large'></i>
-            Data Buku
+            Data Buku  <i class='icon-dashboard'></i>
+           
+            <a href="<?php echo base_url('index.php/cart/addCart') ?>" class=" btn btn-success"> Keranjang Belanja <font color="red" style="box-shadow: red"><?php echo count($this->cart->contents()); ?></shadow></font></a>
           </div>
         
            
@@ -83,7 +82,8 @@
           foreach ($buku_list as $row) : ?>
              <tr><td width="50">
                <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px">
-          </td><td> <font face='calibri' size='3'>Judul : <?php echo $row['judul']; ?><br>
+          </td><td>           
+            <font face='calibri' size='3'>Judul : <?php echo $row['judul']; ?><br>
             Pengarang : <?php echo $row['pengarang']; ?><br>
             Sinopsis : <?php echo $row['sinopsis']; ?><br>
             Penerbit : <?php echo $row['penerbit']; ?><br>
@@ -91,8 +91,9 @@
              Jumlah Halaman : <?php echo $row['jumlah_halaman']; ?><br>
             Stok : <?php echo $row['stok']; ?><br>
              Harga : <?php echo $row['harga']; ?><br>
-           <?php  echo "<a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'>Beli</button></a> <a href='".base_url('index.php/pembelian/beli/'.$row['id_buku'])."' ><button type='submit' class='btn btn-success' style='width:100px;height:30px'><span class='icon-shoping-cart'>Add to Cart</button></a>"; ?>
           
+           <a href="<?php echo base_url('index.php/cart/belicart/'.$row['id_buku']) ?>" class=" btn btn-primary">Add To Cart</a>
+           <a href="<?php echo base_url('index.php/pembelian/beli/'.$row['id_buku']) ?>" class=" btn btn-success">Beli</a>
             </font></td></tr>
           <?php endforeach; ?> 
               
