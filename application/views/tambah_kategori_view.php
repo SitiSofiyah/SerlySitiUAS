@@ -80,7 +80,7 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Pengelolaan Data Buku</li>
+          <li class='title'>Pengelolaan Data kategori</li>
           <!-- <li><a href="#">Lorem</a></li>
           <li class='active'><a href="#">ipsum</a></li> -->
         </ul>
@@ -98,12 +98,12 @@
         <div class='panel panel-default'>
           <div class='panel-heading'>
             <i class='icon-beer icon-large'></i>
-          DashBoard
+         <!--  DashBoard
           </div>
           <div class='panel-body'>
             <div class='page-header'>
               <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
+            <i class='icon-table icon-large'></i> -->
             Dashboard Admin
           </div>
           <div class='panel-body'>
