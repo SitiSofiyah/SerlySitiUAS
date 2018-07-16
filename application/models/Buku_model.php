@@ -15,6 +15,7 @@ class Buku_model extends CI_Model {
 			'pengarang'=>$this->input->post('pengarang'),
 			'penerbit'=>$this->input->post('penerbit'),
 			'tahun_terbit'=>$this->input->post('tahun_terbit'),
+			'id_kategori'=>$this->input->post('kategori'),
 			'jumlah_halaman'=>$this->input->post('jumlah_halaman'),
 			'gambar'=>$this->upload->data('file_name'),
 			'sinopsis'=>$this->input->post('sinopsis'),

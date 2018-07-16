@@ -35,7 +35,7 @@
           </li>
           <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/')?>">Pembelian</a>
+            <a href="<?php echo base_url('index.php/pembelian/index')?>">Pembelian</a>
           </li>
           <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
@@ -97,12 +97,12 @@
         <div class='panel panel-default'>
           <div class='panel-heading'>
             <i class='icon-beer icon-large'></i>
-          DashBoard
+         <!--  DashBoard
           </div>
           <div class='panel-body'>
             <div class='page-header'>
               <div class='panel-heading'>
-            <i class='icon-table icon-large'></i>
+            <i class='icon-table icon-large'></i> -->
             Dashboard Admin
           </div>
           <div class='panel-body'>

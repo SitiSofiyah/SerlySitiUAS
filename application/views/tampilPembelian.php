@@ -112,8 +112,9 @@
               <div class="container">
       <div class="panel-heading">
         <div class="table-striped">
-           <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/create/'.$this->uri->segment('3')?>" >Tambah</a>
-            <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/buku/laporan/'?>" >Print</a><br></div>
+         <!--   <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/pembelian/create/'.$this->uri->segment('3')?>" >Tambah</a> -->
+       
+             <a class="btn btn-success" a href="<?php echo base_url('index.php/buku/laporan')?>"> print</a>
     <thead>
       <tr>
       <th class= "text-center">no</th>
@@ -123,19 +124,20 @@
       <th class= "text-center">tanggal beli</th>
       <th class= "text-center">jumlah beli</th>
       <th class= "text-center">status</th>
+       <th class= "text-center">aksi</th>
     </thead>
 
     <tbody>
-      <?php $no=1; foreach ($buku_list as $key) : ?>
+      <?php $no=1; foreach ($beli_list as $key) : ?>
         <tr>
         <td class= "text-center"><?php echo $no ?></td>
        <!--  <td class= "text-center"><?php echo $key[''] ?></td> -->
         <td class= "text-center"><?php echo $key['judul'] ?></td>
-        <td class= "text-center"><?php echo $key['user'] ?></td>
+        <td class= "text-center"><?php echo $key['username'] ?></td>
         <td class= "text-center"><?php echo $key['tgl_beli'] ?></td>
         <td class= "text-center"><?php echo $key['jml_beli'] ?></td>
         <td class= "text-center"><?php echo $key['status'] ?></td>
-        <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td>
+    <!--     <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td> -->
        
         <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
         <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>

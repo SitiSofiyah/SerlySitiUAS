@@ -79,7 +79,9 @@ class Buku extends CI_Controller {
 			else
 			{
 			$this->buku_model->insertBuku();
-			$this->load->view('tambah_buku_sukses');
+			echo "<script> alert('data buku telah di update, dengan gambar');
+				window.location.href='../../buku/bukuView';</script>";
+			// $this->load->view('tambah_buku_sukses');
 			}
 		}
 

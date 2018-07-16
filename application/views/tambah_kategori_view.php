@@ -36,7 +36,7 @@
           </li>
            <li class='launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/kategori/create')?>">Pembelian</a>
+            <a href="<?php echo base_url('index.php/pembelian/index')?>">Pembelian</a>
           </li>
            <li class='launcher dropdown hover'>
             <i class='icon-flag'></i>
