@@ -17,7 +17,7 @@ class Kategori_model extends CI_Model {
 	}
 	public function getTampil()
 	{
-		$query = $this->db->query("Select * from kategori");
+		$query = $this->db->query("Select * from kategori order by id_kategori asc");
 		return $query->result_array();
 	}
 	// public function updateById($id)
