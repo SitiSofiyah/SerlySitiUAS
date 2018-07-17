@@ -16,6 +16,19 @@ class Pembelian_model extends CI_Model {
 		$this->db->insert('detailPembelian',$orderDetail);
 
 	}
+
+	public function bayarOrder($id){
+		$data = array('bukti_pembayaran' => $this->upload->data('file_name'),
+			'status'=>'Lunas');
+		$this->db->where('id_pembelian', $id);
+		$this->db->update('pembelian', $data);
+
+	}
+
+	public function getPembelianId($id){
+			$query = $this->db->query("SELECT * from pembelian where id_pembelian=$id");
+		return $query->result();
+	}
 	
 	public function getPembelian_List(){
 			$query = $this->db->query("SELECT * from pembelian inner join detailPembelian on pembelian.id_pembelian = detailPembelian.id_pembelian inner join buku on buku.id_buku = detailPembelian.id_buku inner join user on user.id_user=pembelian.id_user");
