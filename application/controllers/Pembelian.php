@@ -52,6 +52,15 @@ class Pembelian extends CI_Controller {
 		$this->load->view('keranjang',$data);
 	}
 
+		public function laporan()
+	{
+		$this->load->model('pembelian_model');
+		$object["pembelian_list"] = $this->pembelian_model->getPembelian_list();
+		//$this->load->view('print', $object);
+		$this->load->library('pdf');
+		$this->pdf->load_view('print_pembelian', $object);
+	}
+
 	
 	public function prosesbeli($id)
 	{

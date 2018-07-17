@@ -114,15 +114,16 @@
         <div class="table-striped">
          <!--   <a class="btn btn-primary" href="<?php echo 'http://localhost:81/Github/SerlySitiUAS/index.php/pembelian/create/'.$this->uri->segment('3')?>" >Tambah</a> -->
        
-             <a class="btn btn-success" a href="<?php echo base_url('index.php/buku/laporan')?>"> print</a>
+             <a class="btn btn-success" a href="<?php echo base_url('index.php/pembelian/laporan')?>"> print</a>
     <thead>
       <tr>
       <th class= "text-center">no</th>
     <!--   <th class= "text-center">nama pembelian</th> -->
+    <th class= "text-center">detail</th>
       <th class= "text-center">judul buku</th>
       <th class= "text-center">nama user</th>
       <th class= "text-center">tanggal beli</th>
-      <th class= "text-center">jumlah beli</th>
+      <th class= "text-center">jumlah</th>
       <th class= "text-center">status</th>
        <th class= "text-center">aksi</th>
     </thead>
@@ -133,9 +134,10 @@
         <td class= "text-center"><?php echo $no ?></td>
        <!--  <td class= "text-center"><?php echo $key[''] ?></td> -->
         <td class= "text-center"><?php echo $key['judul'] ?></td>
+        <td class= "text-center"><?php echo $key['judul'] ?></td>
         <td class= "text-center"><?php echo $key['username'] ?></td>
         <td class= "text-center"><?php echo $key['tgl_beli'] ?></td>
-        <td class= "text-center"><?php echo $key['jml_beli'] ?></td>
+        <td class= "text-center"><?php echo $key['jumlah'] ?></td>
         <td class= "text-center"><?php echo $key['status'] ?></td>
     <!--     <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td> -->
        

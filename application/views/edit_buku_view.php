@@ -83,23 +83,23 @@
 			<?php echo form_open_multipart('buku/update/'.$this->uri->segment(3)); ?>
 			<?php echo validation_errors(); ?>
 				<label for="">judul</label>
-				<input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku[0]->judul ?>">
+				<input type="text" class="form-control" id="judul" name="judul" placeholder="Input field" value="<?php echo $buku->judul ?>">
 				<label for="">pengarang</label>
-				<input type="text" class="form-control" id="pengarang" name="pengarang" placeholder="Input field" value="<?php echo $buku[0]->pengarang ?>">
+				<input type="text" class="form-control" id="pengarang" name="pengarang" placeholder="Input field" value="<?php echo $buku->pengarang ?>">
 				<label for="">penerbit</label>
-				<input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Input field" value="<?php echo $buku[0]->penerbit ?>">
+				<input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Input field" value="<?php echo $buku->penerbit ?>">
 				<label for="">tahun terbit</label>
-				<input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Input field" value="<?php echo $buku[0]->tahun_terbit ?>">
+				<input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Input field" value="<?php echo $buku->tahun_terbit ?>">
 				<label for="">Jumlah Halaman</label>
-				<input type="text" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Input field" value="<?php echo $buku[0]->jumlah_halaman ?>">
+				<input type="text" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Input field" value="<?php echo $buku->jumlah_halaman ?>">
 				<label for="">Sinopsis</label>
-				<input type="text" class="form-control" id="sinopsis" name="sinopsis" placeholder="Input field" value="<?php echo $buku[0]->sinopsis ?>">
+				<input type="text" class="form-control" id="sinopsis" name="sinopsis" placeholder="Input field" value="<?php echo $buku->sinopsis ?>">
 				<label for="">Stok</label>
-				<input type="text" class="form-control" id="stok" name="stok" placeholder="Input field" value="<?php echo $buku[0]->stok ?>">
+				<input type="text" class="form-control" id="stok" name="stok" placeholder="Input field" value="<?php echo $buku->stok ?>">
 				<label for="">Harga</label>
-				<input type="text" class="form-control" id="harga" name="harga" placeholder="Input field" value="<?php echo $buku[0]->harga ?>">
+				<input type="text" class="form-control" id="harga" name="harga" placeholder="Input field" value="<?php echo $buku->harga ?>">
 				<label for="">Gambar</label><br>
-		        <?php  echo "<img src='".base_url('assets/uploads/').$buku[0]->gambar."'width='200px;'>";  ?>
+		        <?php  echo "<img src='".base_url('assets/uploads/').$buku->gambar."'width='200px;'>";  ?>
 		        <input type="file" id="userfile" name="userfile" placeholder="Input field">
 		        <button type="submit" class="btn btn-primary">Submit</button>
 		        <?php echo form_close(); ?>
