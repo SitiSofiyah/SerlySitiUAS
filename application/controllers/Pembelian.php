@@ -74,7 +74,7 @@ class Pembelian extends CI_Controller {
 		$order=array(
 				'tgl_beli'=>date('y-m-d'),
 				'id_user'=>$session_data['id_user'],
-				'status'=>'tunggu',
+				'status'=>'Belum Lunas',
 				'totalBayar'=>$this->cart->total());
 		$orderId=$this->pembelian_model->pembelian($order);
 
@@ -86,7 +86,8 @@ class Pembelian extends CI_Controller {
 				'jumlah'=>$this->input->post('jml'),
 				'totalHarga'=>$this->input->post('harga'));
 				$this->pembelian_model->detailPembelian($orderdetail);
-		$this->load->view('thanks');
+		$oderi['order']=$orderId;
+		$this->load->view('thanks',$oderi);
 	}
 }
 

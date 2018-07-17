@@ -99,7 +99,10 @@
                 <?php echo $row['totalHarga']; ?>
               </td> 
               <td>
-                <?php echo $row['status']; ?>
+               <?php if($row['status'] == 'Belum Lunas'){ ?>
+                <a class="btn btn-primary" href="<?php echo base_url('index.php/cart/bayar/'.$row['id_pembelian']) ?>" > Lunasi Pembayaran   </a>
+               <?php } else {
+                echo $row['status'];} ?>
               </td>                
             </tr>
           <?php endforeach; ?> 

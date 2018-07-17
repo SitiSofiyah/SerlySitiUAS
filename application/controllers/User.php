@@ -26,7 +26,7 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('buku_model');
-		// $data["buku_list"] = $this->buku_model->getBuku_update();
+		$data["buku_list"] = $this->buku_model->getBuku_update();
 		$data["buku_laris"] = $this->buku_model->getBuku_laris();			
 		$this->load->view('dashboardUser',$data);
 	

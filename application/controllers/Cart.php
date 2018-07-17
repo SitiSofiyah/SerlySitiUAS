@@ -95,9 +95,10 @@ class Cart extends CI_Controller {
 			$order=array(
 				'tgl_beli'=>date('y-m-d'),
 				'id_user'=>$session_data['id_user'],
-				'status'=>'tunggu',
+				'status'=>'Belum Lunas',
 				'totalBayar'=>$this->cart->total());
 			$orderId=$this->pembelian_model->pembelian($order);
+			
 
 			//orderdetail'
 			foreach ($this->cart->contents() as $items) {
@@ -112,7 +113,8 @@ class Cart extends CI_Controller {
 				$this->cart->destroy();
 			}		
 		}
-		$this->load->view('thanks');
+		$oderi['order']=$orderId;
+		$this->load->view('thanks',$oderi);
 	}
 	
 	public function addCart()
@@ -120,6 +122,41 @@ class Cart extends CI_Controller {
 
 		$data['cart']=$this->cart->contents();
 		$this->load->view('keranjang',$data);
+	}
+
+	public function bayar($id)
+	{
+		$this->load->model('pembelian_model');
+		$this->form_validation->set_rules('userfile', 'bukti', 'trim|required');
+		$object['id']=$this->pembelian_model->getPembelianId($id);
+		
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('pembayaranView',$object);
+		} else {
+			$config['upload_path']      ='./assets/uploads';
+			$config['allowed_types']    ='gif|jpg|png';
+			$config['max_size']         =1000000000;
+			$config['max_width']        =10240;
+			$config['max_height']       =7680;
+
+			$this->load->library('upload', $config);
+			
+			if ( ! $this->upload->do_upload('userfile'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				$this->pembelian_model->bayarOrder($id)	;
+			echo "<script> alert('Pembayaran berhasil, Terimakasih !');
+				window.location.href='../../user/pembelian';</script>";
+			}
+			else
+			{
+			$this->pembelian_model->bayarOrder($id)	;
+			echo "<script> alert('Pembayaran berhasil, Terimakasih !');
+				window.location.href='../../user/pembelian';</script>";
+			// $this->load->view('tambah_buku_sukses');
+			}
+		}
+			
 	}
 
 	

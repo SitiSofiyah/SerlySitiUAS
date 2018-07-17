@@ -88,7 +88,7 @@
           <div class='panel-body'>
             
 
-           <!--  <div class="row">
+            <div class="row">
                <?php
           foreach($buku_list as $row) {?>
             <div class="col-md-3">
@@ -110,7 +110,7 @@
           </div>
           <?php } ?>
 
-     </div> -->
+     </div>
            <div class='panel-heading'  >
             <i class='icon-beer icon-large'></i>
            Buku Terlaris
