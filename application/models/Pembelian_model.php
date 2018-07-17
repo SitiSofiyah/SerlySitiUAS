@@ -14,26 +14,17 @@ class Pembelian_model extends CI_Model {
 	}
 	public function detailPembelian($orderDetail){
 		$this->db->insert('detailPembelian',$orderDetail);
-		
-	}
-	public function prosesbeli($id){
-		$session_data=$this->session->userdata("logged_in");
-		$iduser=$session_data['id_user'];
-		$date = date('Y-m-d');
-		$object=array(
-			'id_buku'=>$id,
-			'id_user'=>$iduser,
-			'jml_beli'=>$this->input->post('jml'),
-			'tgl_beli'=> $date,
-			'totalHarga'=>$this->input->post('harga'));
 
-		$this->db->insert('pembelian', $object);
-		$data = array('stok' => $this->input->post('stok'));
-		$this->db->where('id_buku', $id);
-		$this->db->update('buku', $data);
 	}
+	
 	public function getPembelian_List(){
-			$query = $this->db->query("SELECT * from pembelian inner join buku on buku.id_buku = pembelian.id_buku inner join user on user.id_user=pembelian.id_user");
+			$query = $this->db->query("SELECT * from pembelian inner join detailPembelian on pembelian.id_pembelian = detailPembelian.id_pembelian inner join buku on buku.id_buku = detailPembelian.id_buku inner join user on user.id_user=pembelian.id_user");
+		return $query->result_array();
+	}
+	public function getPembelian(){
+		$session_data=$this->session->userdata("logged_in");
+		$id=$session_data['id_user'];
+			$query = $this->db->query("SELECT * from pembelian inner join detailPembelian on pembelian.id_pembelian = detailPembelian.id_pembelian inner join buku on buku.id_buku = detailPembelian.id_buku where pembelian.id_user=$id");
 		return $query->result_array();
 	}
 	

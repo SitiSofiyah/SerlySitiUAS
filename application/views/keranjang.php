@@ -31,7 +31,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-         
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/user/pembelian')?>">Data Pembelian</a>
+          </li>
             <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>

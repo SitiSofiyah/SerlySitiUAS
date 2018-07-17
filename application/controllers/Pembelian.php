@@ -52,16 +52,33 @@ class Pembelian extends CI_Controller {
 		$this->load->view('keranjang',$data);
 	}
 
+	
 	public function prosesbeli($id)
 	{
 		$this->load->model('pembelian_model');
-		$this->pembelian_model->prosesbeli($id);
-		$this->load->model('buku_model');
-		redirect('user/datatable','refresh');
+		if($this->session->userdata('logged_in')){
+			$session_data=$this->session->userdata("logged_in");
+			$data['id_user']=$session_data['id_user'];
+		}
+
+			//pembelian
+		$order=array(
+				'tgl_beli'=>date('y-m-d'),
+				'id_user'=>$session_data['id_user'],
+				'status'=>'tunggu',
+				'totalBayar'=>$this->cart->total());
+		$orderId=$this->pembelian_model->pembelian($order);
+
+			//detailPembelian
+			
+				$orderdetail=array(
+				'id_buku'=>$id,
+				'id_pembelian'=>$orderId,
+				'jumlah'=>$this->input->post('jml'),
+				'totalHarga'=>$this->input->post('harga'));
+				$this->pembelian_model->detailPembelian($orderdetail);
+		$this->load->view('thanks');
 	}
-
-	
-
 }
 
 /* End of file Buku.php */

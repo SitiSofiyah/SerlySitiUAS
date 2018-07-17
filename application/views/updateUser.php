@@ -28,7 +28,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-         
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/user/pembelian')?>">Data Pembelian</a>
+          </li>
             <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
@@ -94,6 +97,8 @@
         <input type="text" class="form-control" id="kategori" name="alamat" placeholder="Input field" value="<?php echo $user[0]->alamat ?>">
         <label for="">Email</label>
         <input type="text" class="form-control" id="kategori" name="email" placeholder="Input field" value="<?php echo $user[0]->email ?>">
+        <label for="">Nomor Telp</label>
+        <input type="text" class="form-control" id="kategori" name="notelp" placeholder="Input field" value="<?php echo $user[0]->no_telp ?>">
         <label for="">Gambar</label><br>
         <?php echo" <img src='".base_url('assets/uploads/').$user[0]->gambar."'width='150px;'>";?>
         <input type="file" class="form-control" id="gambar" name="gambar" placeholder="Input field">

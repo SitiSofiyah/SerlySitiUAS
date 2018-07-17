@@ -60,7 +60,7 @@ class Cart extends CI_Controller {
 		);
 		
 		$this->cart->insert($data);
-		redirect('user/datatable','refresh');
+		redirect('user/datatable');
 	}
 	public function update() {
 		$i=1;
@@ -106,10 +106,13 @@ class Cart extends CI_Controller {
 				'id_pembelian'=>$orderId,
 				'jumlah'=>$items['qty'],
 				'totalHarga'=>$items['price']*$items['qty']);
+
 				$this->pembelian_model->detailPembelian($orderdetail);
+
+				$this->cart->destroy();
 			}		
 		}
-		redirect('cart/addcart');
+		$this->load->view('thanks');
 	}
 	
 	public function addCart()

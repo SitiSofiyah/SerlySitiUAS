@@ -26,7 +26,7 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('buku_model');
-		$data["buku_list"] = $this->buku_model->getBuku_update();
+		// $data["buku_list"] = $this->buku_model->getBuku_update();
 		$data["buku_laris"] = $this->buku_model->getBuku_laris();			
 		$this->load->view('dashboardUser',$data);
 	
@@ -81,19 +81,21 @@ class User extends CI_Controller {
 			{
 				$this->user_model->updateById($id);
 				redirect('user/profil','refresh');
-			}
-			
+			}	
 		}
-		
-	
 	}
-
 	public function datatable()
 	{
-		
 		$this->load->model('buku_model');
-		$data["buku_list"] = $this->buku_model->getBuku_list();
-		$this->load->view('dataBuku',$data);
+		$obj["buku_list"] = $this->buku_model->getBuku_list();
+		$this->load->view('dataBuku',$obj);
 	
 	}
+	public function pembelian()
+	{
+		$this->load->model('pembelian_model');
+		$data['beli']=$this->pembelian_model->getPembelian();
+		$this->load->view('pembelianUser',$data);
 	}
+
+}

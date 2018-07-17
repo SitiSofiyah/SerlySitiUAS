@@ -29,6 +29,7 @@ class User_model extends CI_Model
 			'username'=> $this->input->post('username'),
 			'email'=> $this->input->post('email'),
 			'alamat'=> $this->input->post('alamat'),
+			'no_telp'=> $this->input->post('notelp'),
 			'gambar'=> $gambar,
 			'level'=> $level,
 			'password'=>md5($this->input->post('password'))
@@ -50,13 +51,15 @@ class User_model extends CI_Model
 		if($this->upload->data('file_name')=="")
 		{
 			$data = array('username' => $this->input->post('username'),
-			'alamat'=>$this->input->post('alamat'),  
+			'alamat'=>$this->input->post('alamat'), 
+			'no_telp'=>$this->input->post('notelp'),   
 			'email'=>$this->input->post('email'));
 			$this->db->where('id_user', $id);
 			$this->db->update('user', $data);
 		} else{
 			$data = array('username' => $this->input->post('username'),
 			'alamat'=>$this->input->post('alamat'),
+			'no_telp'=>$this->input->post('notelp'),  
 			'gambar'=>$this->upload->data('file_name'),
 			'email'=>$this->input->post('email'));
 			$this->db->where('id_user', $id);

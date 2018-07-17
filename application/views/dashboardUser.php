@@ -28,7 +28,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-         
+          <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/user/pembelian')?>">Pembelian</a>
+          </li>
           <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
@@ -85,7 +88,7 @@
           <div class='panel-body'>
             
 
-            <div class="row">
+           <!--  <div class="row">
                <?php
           foreach($buku_list as $row) {?>
             <div class="col-md-3">
@@ -107,7 +110,7 @@
           </div>
           <?php } ?>
 
-     </div>
+     </div> -->
            <div class='panel-heading'  >
             <i class='icon-beer icon-large'></i>
            Buku Terlaris

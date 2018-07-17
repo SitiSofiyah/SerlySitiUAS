@@ -33,7 +33,7 @@ class Buku_model extends CI_Model {
 
 	public function getBuku_laris()
 	{
-		$query = $this->db->query("SELECT buku.*, sum(jml_beli) as totalBeli FROM buku inner join pembelian where buku.id_buku=pembelian.id_buku GROUP BY buku.id_buku ORDER BY totalBeli DESC LIMIT 4");
+		$query = $this->db->query("SELECT buku.*, sum(jumlah) as totalBeli FROM buku inner join detailpembelian where buku.id_buku=detailpembelian.id_buku GROUP BY buku.id_buku ORDER BY totalBeli DESC LIMIT 4");
 		return $query->result_array();
 	}
 

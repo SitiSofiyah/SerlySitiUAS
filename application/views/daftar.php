@@ -21,6 +21,9 @@
     <fieldset>
       <input name="alamat" placeholder="Your Address" type="text" tabindex="3" required>
     </fieldset>
+     <fieldset>
+      <input name="notelp" placeholder="Your Phone Number" type="text" tabindex="3" required>
+    </fieldset>
     <fieldset>
       <input name="password" placeholder="Your Password" type="password" tabindex="4" required>
     </fieldset>

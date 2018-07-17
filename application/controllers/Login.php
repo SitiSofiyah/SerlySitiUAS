@@ -73,6 +73,7 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('username','username','trim|required');
 		$this->form_validation->set_rules('password','password','trim|required');
 		$this->form_validation->set_rules('alamat','alamat','trim|required');
+		$this->form_validation->set_rules('notelp','notelp','trim|required');
 		$this->form_validation->set_rules('email','email','trim|required');
 		
 

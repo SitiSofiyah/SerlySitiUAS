@@ -31,13 +31,13 @@
             <i class='icon-dashboard'></i>
              <a href="<?php echo base_url('index.php/user')?>">Dashboard</a>
           </li>
-          <li class='active launcher'>
+          <li class='launcher'>
             <i class='icon-file-text-alt'></i>
            <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-          <li class='launcher'>
+          <li class='active launcher'>
             <i class='icon-file-text-alt'></i>
-            <a href="<?php echo base_url('index.php/user/pembelian')?>">Data Pembelian</a>
+            <a href="<?php echo base_url('index.php/user/pembelian')?>">Pembelian</a>
           </li>
           <li class='launcher'>
             <i class='icon-table'></i>
@@ -63,9 +63,7 @@
         <div class='panel panel-default grid'>
           <div class='panel-heading'>
             <i class='icon-table icon-large'></i>
-            Data Buku  <i class='icon-dashboard'></i>
-           
-            <a href="<?php echo base_url('index.php/cart/addCart') ?>" class=" btn btn-success"> Keranjang Belanja <font color="red" style="box-shadow: red"><?php echo count($this->cart->contents()); ?></shadow></font></a>
+            Data Pembelian Buku  
           </div>
         
            
@@ -77,27 +75,33 @@
            <thead>
              <tr >
                <th width="25%">Buku</th>
-               <th width="75%">Detail Buku</th>
+               <th width="75%">Tanggal</th>
+               <th width="75%">Jumlah</th>
+               <th width="75%">TotalBayar</th>
+               <th width="75%">Status</th>
              </tr>
-           </thead>
+           </thead>  
            <tbody>
           <?php
-          foreach ($buku_list as $row) : ?>
-             <tr><td width="50">
-               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px">
-          </td><td>           
-            <font face='calibri' size='3'>Judul : <?php echo $row['judul']; ?><br>
-            Pengarang : <?php echo $row['pengarang']; ?><br>
-            Sinopsis : <?php echo $row['sinopsis']; ?><br>
-            Penerbit : <?php echo $row['penerbit']; ?><br>
-             Tahun Terbit : <?php echo $row['tahun_terbit']; ?><br>
-             Jumlah Halaman : <?php echo $row['jumlah_halaman']; ?><br>
-            Stok : <?php echo $row['stok']; ?><br>
-             Harga : <?php echo $row['harga']; ?><br>
-          
-           <a href="<?php echo base_url('index.php/cart/belicart/'.$row['id_buku']) ?>" class=" btn btn-primary">Add To Cart</a>
-           <a href="<?php echo base_url('index.php/pembelian/beli/'.$row['id_buku']) ?>" class=" btn btn-success">Beli</a>
-            </font></td></tr>
+          foreach ($beli as $row) : ?>
+             <tr>
+              <td width="50">
+               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px"><br>
+               Judul : <?php echo $row['judul']; ?>
+              </td>
+              <td>
+                <?php echo $row['tgl_beli']; ?>
+              </td>
+              <td>
+                <?php echo $row['jumlah']; ?>
+              </td>
+              <td>
+                <?php echo $row['totalHarga']; ?>
+              </td> 
+              <td>
+                <?php echo $row['status']; ?>
+              </td>                
+            </tr>
           <?php endforeach; ?> 
               
           </tbody>

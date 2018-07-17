@@ -28,7 +28,10 @@
             <i class='icon-file-text-alt'></i>
             <a href="<?php echo base_url('index.php/user/datatable')?>">Buku</a>
           </li>
-        
+           <li class='launcher'>
+            <i class='icon-file-text-alt'></i>
+            <a href="<?php echo base_url('index.php/user/pembelian')?>">Data Pembelian</a>
+          </li>
             <li class='launcher'>
             <i class='icon-table'></i>
             <a href="<?php echo base_url('index.php/user/profil')?>">Profil</a>
@@ -92,9 +95,10 @@
           foreach ($user as $row) {
             echo "</td><img src='".base_url('assets/uploads/').$row['gambar']."'width='150px;'>";
             echo " <tr><td width='120' >";
-            echo "<font face='calibri' size='3'>Nama : ".$row['username'];
+            echo "<font face='calibri' size='3'>Username : ".$row['username'];
             echo "</td></tr><tr><td><font face='calibri' size='3'>Email : ".$row['email'];
             echo "</td></tr><tr><td><font face='calibri' size='3'>Alamat : ".$row['alamat'];
+            echo "</td></tr><tr><td><font face='calibri' size='3'>Nomor telp : ".$row['no_telp'];
             echo "</font></td></tr>";
             echo "</td></tr><tr><td><a href='".base_url('index.php/user/update/'.$row['id_user'])."'><button type='submit' class='btn btn-success' style='width:100px;height:30px'>Update</button></a></td></tr>";
 
