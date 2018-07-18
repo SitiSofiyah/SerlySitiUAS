@@ -99,7 +99,7 @@
               <div class="caption">
                 <h1> <?php   echo $row['judul'] ;?>
                 </h1>
-                <a class="btn btn-success" href="#">Beli</a>
+                <a href="<?php echo base_url('index.php/pembelian/beli/'.$row['id_buku']) ?>" class=" btn btn-success">Beli</a>
               </div>
               </div>
 
