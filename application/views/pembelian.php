@@ -95,7 +95,7 @@
           <input type="hidden" class="form-control" id="stk" name="stk" placeholder="Input field" value="<?php echo $buku->stok ?>" disabled>
           <input type="hidden" class="form-control" id="stok" name="stok" placeholder="Input field">
        
-        <label for="">Jumlah Pinjam</label><br>
+        <label for="">Jumlah beli</label><br>
         <select name="jml" class="form-control" id="jml" onchange="changeValue(this.value)">
           <option>pilih jumlah</option>
           <?php for($a=1;$a<=$buku->stok;$a++) { ?>

@@ -86,7 +86,7 @@
           foreach ($beli as $row) : ?>
              <tr>
               <td width="50">
-               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px"><br>
+               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px; height: 200px"><br>
                Judul : <?php echo $row['judul']; ?>
               </td>
               <td>
@@ -96,7 +96,7 @@
                 <?php echo $row['jumlah']; ?>
               </td>
               <td>
-                <?php echo $row['totalHarga']; ?>
+                <?php echo "Rp.". $row['totalHarga']; ?>
               </td> 
               <td>
                <?php if($row['status'] == 'Belum Lunas'){ ?>

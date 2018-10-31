@@ -22,7 +22,7 @@
       <th class= "text-center">tanggal beli</th>
       <th class= "text-center">jumlah</th>
       <th class= "text-center">status</th>
-       <th class= "text-center">aksi</th>
+       
      <!--  <th class= "text-center">aksi</th> -->
     </thead>
 

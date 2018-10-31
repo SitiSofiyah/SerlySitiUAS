@@ -84,7 +84,7 @@
           <?php
           foreach ($buku_list as $row) : ?>
              <tr><td width="50">
-               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px">
+               <img src="../../assets/uploads/<?php echo $row['gambar'] ?>" style="width:200px; height:200px">
           </td><td>           
             <font face='calibri' size='3'>Judul : <?php echo $row['judul']; ?><br>
             Pengarang : <?php echo $row['pengarang']; ?><br>

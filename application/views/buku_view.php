@@ -133,6 +133,7 @@
     <tbody>
       <?php $no=1; foreach ($buku_list as $key) : ?>
         <tr>
+
         <td class= "text-center"><?php echo $no ?></td>
         <td class= "text-center"><?php echo $key['judul'] ?></td>
         <td class= "text-center"><?php echo $key['pengarang'] ?></td>
@@ -140,10 +141,10 @@
         <td class= "text-center"><?php echo $key['tahun_terbit'] ?></td>
         <td class= "text-center"><?php echo $key['kategori'] ?></td>
         <td class= "text-center"><?php echo $key['jumlah_halaman'] ?></td>
-        <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td>
+        <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px; height: 200px"></td>
         <td class= "text-center"><?php echo $key['sinopsis'] ?></td>
         <td class= "text-center"><?php echo $key['stok'] ?></td>
-        <td class= "text-center"><?php echo $key['harga'] ?></td>
+        <td class= "text-center"><?php echo "Rp.".number_format($key['harga'],2,',','.') ?></td>
   
         <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
         <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>
