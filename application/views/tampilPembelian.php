@@ -117,7 +117,7 @@
              <a class="btn btn-success" a href="<?php echo base_url('index.php/pembelian/laporan')?>"> print</a>
     <thead>
       <tr>
-      <th class= "text-center">no</th>
+    <!--   <th class= "text-center">no</th> -->
     <!--   <th class= "text-center">nama pembelian</th> -->
     <th class= "text-center">detail</th>
       <th class= "text-center">judul buku</th>
@@ -125,24 +125,29 @@
       <th class= "text-center">tanggal beli</th>
       <th class= "text-center">jumlah</th>
       <th class= "text-center">status</th>
-       <th class= "text-center">aksi</th>
+      <!--  <th class= "text-center">aksi</th> -->
     </thead>
 
     <tbody>
       <?php $no=1; foreach ($beli_list as $key) : ?>
         <tr>
-        <td class= "text-center"><?php echo $no ?></td>
+         <!-- <?php $tanggalLahir1 = $key['tgl_beli'];
+    
+    $tanggalExplode = explode('-', $tanggalLahir1);
+    $tanggalLahir2 = $tanggalExplode[2].'-'.$tanggalExplode[1].'-'.$tanggalExplode[0]; ?>
+        <td class= "text-center"><?php echo $no ?></td> -->
        <!--  <td class= "text-center"><?php echo $key[''] ?></td> -->
         <td class= "text-center"><?php echo $key['judul'] ?></td>
         <td class= "text-center"><?php echo $key['judul'] ?></td>
         <td class= "text-center"><?php echo $key['username'] ?></td>
         <td class= "text-center"><?php echo $key['tgl_beli'] ?></td>
+       <!--  <td class= "text-center"><?php echo $tanggalLahir2 ?></td> -->
         <td class= "text-center"><?php echo $key['jumlah'] ?></td>
         <td class= "text-center"><?php echo $key['status'] ?></td>
     <!--     <td class= "text-center"><img src="../../assets/uploads/<?php echo $key['gambar'] ?>" style="width:200px"></td> -->
        
-        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
-        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td>
+    <!--     <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/update/'.$key['id_buku']) ?>"> edit</a></td>
+        <td><a class="btn btn-success" a href="<?php echo base_url('index.php/buku/delete/'.$key['id_buku']) ?>"> hapus</a></td> -->
       
     </tr>
       <?php $no++; endforeach?>
